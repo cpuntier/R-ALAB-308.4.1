@@ -5,8 +5,9 @@ console.log(splitString);
 splitString.forEach((string) => {
   twodArray.push(string.split(","));
 });
-
+//Part 2 Cone
 console.log(twodArray);
+
 // let cell1 = "";
 // let cell2 = "";
 // let cell3 = "";
