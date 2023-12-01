@@ -6,7 +6,7 @@ splitString.forEach((string) => {
   twodArray.push(string.split(","));
 });
 //Part 1 + 2 Done
- 
+
 //Part 3 Start
 let objectArray = [];
 
@@ -85,7 +85,14 @@ for(let i = 0; i < objectArray.length;i++){
 }
 console.log(arrayCSV);
 
+///Part 5 done.
 
+
+/** 
+ * Below is old code from previous lab used to parse through csv file.
+ * 
+ * 
+*/
 
 // let cell1 = "";
 // let cell2 = "";
