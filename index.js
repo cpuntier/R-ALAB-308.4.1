@@ -5,9 +5,9 @@ let twodArray = [];
 splitString.forEach((string) => {
   twodArray.push(string.split(","));
 });
-//Part 2 Done
-//console.log(twodArray);
-
+//Part 1 + 2 Done
+ 
+//Part 3 Start
 let objectArray = [];
 
 for (let i = 1; i < twodArray.length; i++) {
@@ -28,6 +28,63 @@ for (let i = 1; i < twodArray.length; i++) {
 
 console.log(objectArray);
 ////Part 3 Done!!!
+
+///Part 4 Start
+///1. Remove the last element from the sorted array.
+objectArray.pop();
+console.log(objectArray);
+
+///2.Insert the following object at index 1:
+///{ id: "48", name: "Barry", occupation: "Runner", age: "25" }
+
+let newObject = {id: "48", name: "Barry", occupation: "Runner", age: "25"}
+objectArray.splice(1,0,newObject);
+console.log(objectArray);
+
+///3.Add the following object to the end of the array:
+///{ id: "7", name: "Bilbo", occupation: "None", age: "111" }
+let newObject2 = { id: "7", name: "Bilbo", occupation: "None", age: "111" };
+objectArray.push(newObject2);
+console.log(objectArray);
+
+///Now to calculate the average of the ages in the current array
+
+let sum = 0;
+
+for(let i =0; i< objectArray.length; i++){
+  sum += parseInt(objectArray[i].age);
+}
+
+let averageAge = sum/objectArray.length;
+console.log(averageAge);
+///Part 4 Done
+
+
+
+///Part 5 
+///Full Circle
+///Turning array into csv string
+
+let arrayCSV = "";
+let keyArray = [];
+for(keys in objectArray[0]){  
+  if (keys === "id"){
+    keyArray.push(keys.toUpperCase());
+  }else{
+    keys = 
+    keyArray.push(keys.charAt(0).toUpperCase() + keys.slice(1));
+  }
+}
+arrayCSV = keyArray.join(',');
+arrayCSV += '\\n';
+for(let i = 0; i < objectArray.length;i++){
+  arrayCSV = arrayCSV+objectArray[i].id +',';
+  arrayCSV = arrayCSV+objectArray[i].name+',';
+  arrayCSV = arrayCSV+objectArray[i].occupation+',';
+  arrayCSV = arrayCSV+objectArray[i].age+'\\n';
+}
+console.log(arrayCSV);
+
 
 
 // let cell1 = "";
