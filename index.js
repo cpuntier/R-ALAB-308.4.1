@@ -1,12 +1,34 @@
 const string = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26`;
 let splitString = string.split("\n");
 let twodArray = [];
-console.log(splitString);
+//console.log(splitString);
 splitString.forEach((string) => {
   twodArray.push(string.split(","));
 });
-//Part 2 Cone
-console.log(twodArray);
+//Part 2 Done
+//console.log(twodArray);
+
+let objectArray = [];
+
+for (let i = 1; i < twodArray.length; i++) {
+  objectArray.push({})
+  for (let j = 0; j < twodArray[i].length; j++) {
+    console.log(twodArray[i][j]);
+    if(j === 0){
+      objectArray[i-1]["id"] = twodArray[i][j];
+    }else if(j === 1){
+      objectArray[i-1]["name"] = twodArray[i][j];
+    }else if(j === 2){
+      objectArray[i-1]["occupation"] = twodArray[i][j];
+    }else if(j ===3){
+      objectArray[i-1]["age"] = twodArray[i][j];
+    }
+  }
+}
+
+console.log(objectArray);
+////Part 3 Done!!!
+
 
 // let cell1 = "";
 // let cell2 = "";
